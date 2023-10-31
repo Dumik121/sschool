@@ -1,0 +1,311 @@
+body {
+  background-color: rgb(73, 52, 52);
+}
+.button-container {
+  width: 20%;
+  height: 30px;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+.select-remove-name > button,
+.color-container > button,
+.button-container > button {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.select-remove-name > button:before,
+.color-container > button:before,
+.button-container > button:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.select-remove-name > button:after,
+.color-container > button:after,
+.button-container > button:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+.color-container {
+  margin-top: 20px;
+  width: 380px;
+  height: 115px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.color-container > input[type="text"],
+.button-container > input[type="text"],
+.color-container > input[type="color"],
+.button-container > input[type="color"] {
+  padding: 0.6em;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+}
+
+.color-container > input[type="text"] {
+  background: #f1f1f1;
+}
+
+.button-container > input[type="text"] {
+  background: #e6e6e6;
+}
+
+.color-container > input[type="color"],
+.button-container > input[type="color"] {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border-radius: 20%;
+}
+.car {
+  display: flex;
+  width: 100%;
+  height: 120px;
+  border-bottom: 2px dashed white;
+  margin-bottom: 10px;
+  padding: 5px;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.select-remove-name {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.button-div {
+  display: flex;
+  gap: 10px;
+  height: 26px;
+  width: 61px;
+}
+
+.car button {
+  cursor: pointer;
+}
+.select-remove-name > button {
+  width: 81px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.car-container {
+  color: whitesmoke;
+}
+.flag-div {
+  position: absolute;
+  right: 10%;
+  width: 49px;
+  height: 42px;
+  background: url("./assets/Checkered-Racing-Flags.svg");
+}
+.UPDATE-input,
+.UPDATE-color,
+.UPDATE-button {
+  pointer-events: none;
+  opacity: 0.5;
+}
+.UPDATE-input.active,
+.UPDATE-color.active,
+.UPDATE-button.active {
+  pointer-events: all;
+  opacity: 1;
+}
+.ButtonPrev,
+.ButtonNext {
+  gap: 10px;
+  margin-top: 7px;
+  margin-bottom: 5px;
+}
+
+.ButtonPrev,
+.ButtonNext,
+.button-div > button {
+  --color: #560bad;
+  font-family: inherit;
+  display: inline-block;
+  height: 26px;
+  width: 61px;
+  line-height: 2.5em;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--color);
+  transition: color 0.5s;
+  z-index: 1;
+  font-size: 17px;
+  border-radius: 6px;
+  font-weight: 500;
+  color: var(--color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ButtonPrev:before,
+.ButtonNext:before,
+.button-div > button:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  height: 150px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.ButtonPrev:hover,
+.ButtonNext:hover,
+.button-div > button:hover {
+  color: #fff;
+}
+
+.ButtonPrev:before,
+.ButtonNext:before,
+.button-div > button:before {
+  top: 100%;
+  left: 100%;
+  transition: all 0.7s;
+}
+
+.ButtonPrev:hover:before,
+.ButtonNext:hover:before,
+.button-div > button:hover:before {
+  top: -30px;
+  left: -30px;
+}
+
+.ButtonPrev:active:before,
+.ButtonNext:active:before,
+.button-div > button:active:before {
+  background: #3a0ca3;
+  transition: background 0s;
+}
+
+.car-svg {
+  width: 90px;
+  height: 40px;
+  position: relative;
+  transform: scaleX(-1);
+  left: 0;
+}
+.car-container-container .car:nth-child(n + 8) {
+  display: none;
+}
+.car-animation {
+  animation: carAnimation ease-in 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes carAnimation {
+  from {
+    left: 0;
+  }
+  to {
+    left: 90%;
+  }
+}
+.clicked {
+  pointer-events: none;
+  opacity: 0.5;
+}
+.WinnersContainer {
+  width: 100%;
+
+  color: whitesmoke;
+}
+.car-svg-winner {
+  transform: scaleX(-1);
+}
+
+
+.WiinersTextCongrats {
+  top: 50%;
+  position: absolute;
+  display: none;
+  width: 35%;
+  height: 100px;
+  z-index: 5;
+  font-family:arial black;
+  font-size:40px;
+  background-image: 
+    linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet, red); 
+  -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;  
+  animation: rainbow-animation 35s linear infinite;
+}
+
+@keyframes rainbow-animation {
+    to {
+        background-position: 4500vh;
+    }
+}
+.pressed{
+  pointer-events: none;
+    opacity: 0.5;
+}
+.button-container :nth-child(2){
+  pointer-events: none;
+  opacity: 0.5;
+}

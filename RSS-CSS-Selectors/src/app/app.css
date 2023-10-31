@@ -1,0 +1,401 @@
+.app {
+  width: 50%;
+  height: 131px;
+  margin-top: 5px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.button {
+  width: 20%;
+  height: 40px;
+}
+.TextTitle {
+  font-size: 30px;
+  text-align: center;
+  color: #0ef6cc;
+}
+.table {
+  width: 50%;
+  height: 130px;
+  background-color: #3e8175;
+  margin: auto;
+  margin-top: 10px;
+  box-shadow: 0px 40px 10px rgba(0, 0, 0, 0.2);
+  background: #dd992d;
+  background: -webkit-linear-gradient(#dd992d, #cd8c26);
+  background: linear-gradient(#dd992d, #cd8c26);
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.table::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: #ac741c;
+}
+
+.EditorWindow {
+  width: 80%;
+  height: 430px;
+  margin: auto;
+  background-color: #3a4f50;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.EditorsTitle {
+  font-size: 30px;
+  color: #0ef6cc;
+  width: 50%;
+  text-align: center;
+  height: 50px;
+}
+.InputField {
+  height: 380px;
+  width: 50%;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.InputField:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+.InputField:disabled {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+}
+.HTMLField {
+  background-color: #3e8175;
+  height: 380px;
+  width: 50%;
+  white-space: pre;
+  font-size: 16px;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.HTMLField > div:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+orange,
+apple,
+pickle,
+bento,
+plate {
+  transition: transform ease-out 0.2s;
+}
+orange:hover,
+apple:hover,
+pickle:hover,
+bento:hover,
+plate:hover,
+fancy:hover {
+  box-shadow: 10px 10px 10px 10px;
+}
+
+.pop {
+  animation: pop 0.2s;
+}
+
+@keyframes pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+    transform-origin: center;
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+bento,
+plate,
+fancy {
+  box-shadow: 0px 8px 0px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 0 10px;
+  margin-top: 5px;
+  position: relative;
+}
+
+plate,
+fancy {
+  border-bottom: solid 5px #ddd;
+  background: white;
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+}
+
+bento {
+  height: 100px;
+  background: brown;
+  position: relative;
+  border: solid 3px #711c12;
+  border-width: 20px 2px;
+}
+
+bento plate {
+  top: -35px;
+  left: -13px;
+}
+bento apple,
+bento orange {
+  top: -23px;
+  left: 8px;
+}
+apple pickle{
+  top: -37px;
+  left: 3px;
+}
+bento pickle {
+  top: -23px;
+  left: 23px;
+}
+plate pickle {
+  top: -2px;
+  left: 26px;
+}
+fancy pickle {
+  top: -2px;
+  left: 26px;
+}
+plate bento apple,
+plate bento orange {
+  top: -36px !important;
+}
+bento:before {
+  content: "";
+  position: absolute;
+  width: calc(100%);
+  top: 0;
+  left: 0;
+  border: solid 10px rgba(0, 0, 0, 0.1);
+  border-width: 10px 0 0 0px;
+}
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+.strobe {
+  transform-origin: bottom;
+  animation: strobeStart 0.5s ease-out, strobe 1s infinite;
+  animation-delay: 0s, 0.5s;
+}
+@keyframes strobe {
+  0% {
+    transform: skew(4deg, 0deg) scaleX(1);
+  }
+  10% {
+    transform: skew(1deg, 0deg) scaleY(0.9);
+  }
+  50% {
+    transform: skew(-4deg, 0deg) scaleX(1);
+  }
+  60% {
+    transform: skew(-1deg, 0deg) scaleY(0.9);
+  }
+  100% {
+    transform: skew(4deg, 0deg) scaleX(1);
+  }
+}
+
+plate:before,
+fancy:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: calc(50% - 32px);
+  top: calc(50% - 32px);
+  height: 65px;
+  width: 65px;
+  border-radius: 60px;
+  border-top: solid 6px #ccc;
+  opacity: 0.4;
+  background: rgba(255, 255, 255, 1);
+}
+.InputField {
+  background: #ffffff0d;
+  -webkit-animation: input 0.5s infinite;
+  -moz-animation: input 0.5s infinite;
+  color: #fff;
+}
+
+@-webkit-keyframes input {
+  50% {
+    background: none;
+  }
+}
+
+@-moz-keyframes input {
+  50% {
+    background: none;
+  }
+}
+.LevelsPanel {
+  margin-top: 15px;
+  width: 100%;
+  height: 162px;
+  display: flex;
+  background-color: #1a2829;
+  border-radius: 5px;
+}
+.Level {
+  height: 100%;
+  width: 10%;
+  color: #0ef6cc;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+fancy:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: calc(50% - 44px);
+  top: calc(50% - 44px);
+  height: 89px;
+  width: 89px;
+  border-radius: 60px;
+  border: solid 10px #009ff2;
+  opacity: 0.4;
+}
+
+apple {
+  background: #e41919;
+  border-color: #ab1212;
+}
+
+orange {
+  background: orange;
+  border-color: #bd6e07;
+}
+
+orange,
+apple,
+pickle {
+  box-shadow: 0px 5px 0px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  margin: 0 10px;
+  height: 60px;
+}
+orange,
+apple {
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+  border-style: solid;
+  border-width: 2px 4px 15px 4px;
+  height: 60px;
+  width: 60px;
+  position: relative;
+  margin: 20px 10px;
+}
+
+orange:before,
+apple:before {
+  content: "";
+  display: block;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+  height: 30%;
+  width: 30%;
+  top: 0px;
+  left: calc(50% - 15%);
+  border-radius: 100px;
+}
+pickle {
+  background: #179837;
+  width: 25px;
+  border-radius: 30px;
+  display: inline-block;
+  position: relative;
+  border: solid 2px #025a18;
+  border-width: 2px 2px 9px 2px;
+  margin: 20px 10px;
+}
+button {
+  padding: 5px 10px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #333;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+  color: #fff;
+}
+
+button:active {
+  background-color: #444;
+  color: #fff;
+}
+
+button:focus {
+  outline: none;
+}
+.shake {
+  animation: shake 0.1s 5;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+.currentlevel{
+  background-color: #3e8175;
+}
+.passed{
+  background-color: #024702;
+}
+.currentlevel.passed{
+  background-color: #771161;
+
+}
+.app>button{
+  margin-bottom: 1px;
+  width: 30%;
+  height: 55px;
+}
+.logoRss{
+  width: 50px;
+  height: 50px;
+}
